@@ -1,3 +1,4 @@
+import HomeLayout from 'Components/Layout/HomeLayout/HomeLayout';
 import React from 'react';
 import { Route, Routes } from 'react-router';
 
@@ -9,7 +10,9 @@ const IndexRouter = () => {
   /* Render */
   return (
     <Routes>
-      <Route path="/" element={<h1>Home</h1>} />
+      <Route path="/" element={<HomeLayout />}>
+        <Route path="/" element={<div>Home</div>} />
+      </Route>
     </Routes>
   );
 };

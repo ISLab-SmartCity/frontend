@@ -1,0 +1,110 @@
+.home-container {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #FFF;
+    border-radius: 20px;
+}
+
+.home-container .header {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.06);
+}
+
+.home-container .header .logo {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid lightgray; */
+    border-radius: 50%;
+    margin: 0 30px;
+}
+
+.home-container .header .search {
+    width: 564px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container .header .search .search-box {
+    width: 100%;
+    height: 64px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.home-container .header .search .search-box .type-select {
+    width: 80px;
+    height: 100%;
+    border-radius: 8px 0px 0px 8px;
+    border: 1px solid #D3D3D3;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 0;
+}
+
+.home-container .header .search .search-box .input-box {
+    flex: 1;
+    height: 100%;
+    border-radius: 0px 8px 8px 0px;
+    border: 1px solid #D3D3D3;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 0;
+}
+
+.home-container .header .search .search-box .input-box input {
+    flex: 1;
+    height: 100%;
+    padding: 0 16px;
+}
+
+.home-container .header .search .search-box .input-box .search-btn {
+    width: 64px;
+    height: 100%;
+    border-radius: 0px 8px 8px 0px;
+    background: #5E81F4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.home-container .header .user {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.home-container .content {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

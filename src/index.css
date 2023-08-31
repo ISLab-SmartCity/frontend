@@ -2,3 +2,17 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #F5F7FA 0%, #C3CFE2 100%);
+}
+
