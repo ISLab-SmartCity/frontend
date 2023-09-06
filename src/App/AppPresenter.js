@@ -1,4 +1,4 @@
-import IndexRouter from 'Pages';
+import IndexRouter from 'Routes';
 import React from 'react';
 
 const AppPresenter = () => {
