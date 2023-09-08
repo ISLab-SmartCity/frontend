@@ -1,0 +1,22 @@
+.map-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container .sidebar{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container .map-content{
+    width: 60%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}

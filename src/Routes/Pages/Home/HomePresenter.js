@@ -1,5 +1,6 @@
 import { DefaultMap } from 'Components';
 import React from 'react';
+import './home.css';
 
 const HomePresenter = () => {
   /* Router */
@@ -8,8 +9,11 @@ const HomePresenter = () => {
   /* Hooks */
   /* Render */
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <DefaultMap />
+    <div className="map-container">
+      <div className="sidebar">SideBar</div>
+      <div className="map-content">
+        <DefaultMap />
+      </div>
     </div>
   );
 };
