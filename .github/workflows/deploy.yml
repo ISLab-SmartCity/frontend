@@ -28,4 +28,4 @@ jobs:
             git pull origin main
             npm install
             npm run build
-            echo -e "<IfModule mod_rewrite.c>\n\tRewriteEngine On\n\tRewriteBase /\n\tRewriteCond %{REQUEST_FILENAME} \041-f\n\tRewriteCond %{REQUEST_FILENAME} \041-d\n\tRewriteCond %{REQUEST_FILENAME} \041-l\n\tRewriteRule ^.*$ / [L,QSA]\n<IfModule mod_rewrite.c>" >> ./dist/.htaccess
+            echo -e "<IfModule mod_rewrite.c>\n\tRewriteEngine On\n\tRewriteBase /\n\tRewriteCond %{REQUEST_FILENAME} \041-f\n\tRewriteCond %{REQUEST_FILENAME} \041-d\n\tRewriteCond %{REQUEST_FILENAME} \041-l\n\tRewriteRule ^.*$ / [L,QSA]\n<IfModule mod_rewrite.c>" >> ./build/.htaccess
