@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PNU - 스마트시티랩 에이전트",
+  "name": "스마트시티랩 가상공간 및 모의도시 플랫폼 연동 요소 기술 개발",
   "icons": [
     {
       "src": "favicon.ico",

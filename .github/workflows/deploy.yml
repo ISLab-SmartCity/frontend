@@ -1,0 +1,31 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# prod.deploy.yml
+name: 스마트시티랩 Agent Web 배포
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: SSH and deploy node app
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ~/frontend
+            git pull origin main
+            npm install
+            npm run build
+            echo -e "<IfModule mod_rewrite.c>\n\tRewriteEngine On\n\tRewriteBase /\n\tRewriteCond %{REQUEST_FILENAME} \041-f\n\tRewriteCond %{REQUEST_FILENAME} \041-d\n\tRewriteCond %{REQUEST_FILENAME} \041-l\n\tRewriteRule ^.*$ / [L,QSA]\n<IfModule mod_rewrite.c>" >> ./dist/.htaccess
