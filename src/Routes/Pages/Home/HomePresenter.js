@@ -2,9 +2,10 @@ import { DefaultMap } from 'Components';
 import React from 'react';
 import './home.css';
 
-const HomePresenter = () => {
+const HomePresenter = props => {
   /* Router */
   /* State */
+  const { markerList, handleAddMarker } = props;
   /* Functions */
   /* Hooks */
   /* Render */
@@ -12,7 +13,7 @@ const HomePresenter = () => {
     <div className="map-container">
       <div className="sidebar">SideBar</div>
       <div className="map-content">
-        <DefaultMap />
+        <DefaultMap markerList={markerList} handleAddMarker={handleAddMarker} />
       </div>
     </div>
   );

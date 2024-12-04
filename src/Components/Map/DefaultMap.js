@@ -2,7 +2,7 @@ import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { API_KEY } from 'Utils';
 import React, { useCallback, useEffect, useState } from 'react';
 
-const DefaultMap = ({ sensorLocations }) => {
+const DefaultMap = ({ sensorLocations, handleAddMarker, markerList }) => {
   /* Router */
   /* State */
   const { isLoaded } = useJsApiLoader({
@@ -46,15 +46,15 @@ const DefaultMap = ({ sensorLocations }) => {
 
   const sensorIcons = {
     sensor1:
-      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" stroke="none"%3E%3Ccircle cx="12" cy="12" r="8" fill="%23000" /%3E%3C/svg%3E',
+      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="black" stroke="none"%3E%3Ccircle cx="12" cy="12" r="8" fill="%23000" /%3E%3C/svg%3E',
     sensor2:
-      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" stroke="none"%3E%3Crect width="16" height="16" fill="%23000" /%3E%3C/svg%3E',
+      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="black" stroke="none"%3E%3Crect width="16" height="16" fill="%23000" /%3E%3C/svg%3E',
     sensor3:
-      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" stroke="none"%3E%3Cpolygon points="12,2 2,22 22,22" fill="%23000" /%3E%3C/svg%3E',
+      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="black" stroke="none"%3E%3Cpolygon points="12,2 2,22 22,22" fill="%23000" /%3E%3C/svg%3E',
     sensor4:
-      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" stroke="none"%3E%3Cpath d="M12 2 L2 22 L22 22 Z" fill="%23000" /%3E%3C/svg%3E',
+      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="black" stroke="none"%3E%3Cpath d="M12 2 L2 22 L22 22 Z" fill="%23000" /%3E%3C/svg%3E',
     sensor5:
-      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" stroke="none"%3E%3Ccircle cx="12" cy="12" r="10" fill="%23000" /%3E%3C/svg%3E',
+      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="black" stroke="none"%3E%3Ccircle cx="12" cy="12" r="10" fill="%23000" /%3E%3C/svg%3E',
   };
 
   const onLoad = useCallback(async (map) => {
@@ -87,7 +87,13 @@ const DefaultMap = ({ sensorLocations }) => {
     >
       {sensorLocations.map((location, index) => {
         return (
-          <Marker key={index} position={location} icon={sensorIcons.sensor1} />
+          <Marker
+            key={index}
+            position={location}
+            icon={sensorIcons.sensor1}
+            label={"test"}
+            onClick={(e) => {console.log(e);}}
+          />
         );
       })}
     </GoogleMap>
