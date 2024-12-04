@@ -1,5 +1,5 @@
 version: '3'
-
+name: SmartCityLab-Frontend
 services:
   web:
     build:
