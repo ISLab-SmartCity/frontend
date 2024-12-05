@@ -85,13 +85,19 @@ const DefaultMap = ({ sensorLocations, handleAddMarker, markerList }) => {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      {sensorLocations.map((location, index) => {
+      {markerList.map((markerItem, index) => {
+        const { location, name } = markerItem;
         return (
           <Marker
             key={index}
+            title={name}
             position={location}
             icon={sensorIcons.sensor1}
-            label={"test"}
+            clickable
+            onMouseOver={() => {
+              console.log(name);
+            }}
+            label={name}
             onClick={(e) => {console.log(e);}}
           />
         );
